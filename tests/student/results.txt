@@ -1,0 +1,12 @@
+PASS own fixtures: 25
+PASS randomized + repeated mixed: 660 total requests, seed 20261107, 0.082s
+PASS scale-lcs-1000x1000: 0.059s
+PASS scale-merge-200-zeros: 0.053s
+PASS scale-merge-200-billions: 0.059s
+PASS scale-tree-100k-chain: 0.202s
+PASS scale-tree-100k-large-sum: 0.212s
+PASS scale-kmp-200k-100k: 0.112s
+PASS scale-rk-10k-2k: 0.095s
+PASS scale-suffix-50k: 0.120s
+PASS scale-aho-10000-100texts: 0.232s
+PASS scale-aho-100k-trie: 0.159s

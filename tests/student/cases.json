@@ -1,0 +1,484 @@
+[
+  {
+    "name": "lcs-both-empty",
+    "input": {
+      "task": "lcs",
+      "a": "",
+      "b": ""
+    },
+    "output": {
+      "length": 0,
+      "sequence": ""
+    },
+    "defect": "No out-of-range DP backtrack"
+  },
+  {
+    "name": "lcs-noncontiguous",
+    "input": {
+      "task": "lcs",
+      "a": "aXbYc",
+      "b": "abc"
+    },
+    "output": {
+      "length": 3,
+      "sequence": "abc"
+    },
+    "defect": "Subsequence versus substring"
+  },
+  {
+    "name": "lcs-mismatch",
+    "input": {
+      "task": "lcs",
+      "a": "ABC",
+      "b": "xyz"
+    },
+    "output": {
+      "length": 0,
+      "sequence": ""
+    },
+    "defect": "Mismatch base cases"
+  },
+  {
+    "name": "merge-adjacency",
+    "input": {
+      "task": "merge",
+      "sizes": [
+        1,
+        100,
+        1
+      ]
+    },
+    "output": {
+      "cost": 203,
+      "plan": []
+    },
+    "defect": "Illegal arbitrary smallest pair"
+  },
+  {
+    "name": "merge-zeros",
+    "input": {
+      "task": "merge",
+      "sizes": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "output": {
+      "cost": 0,
+      "plan": []
+    },
+    "defect": "Tie and chronological reconstruction"
+  },
+  {
+    "name": "merge-64bit",
+    "input": {
+      "task": "merge",
+      "sizes": [
+        1000000000,
+        1000000000,
+        1000000000,
+        1000000000
+      ]
+    },
+    "output": {
+      "cost": 8000000000,
+      "plan": []
+    },
+    "defect": "Long arithmetic for accumulated cost"
+  },
+  {
+    "name": "tree-all-negative",
+    "input": {
+      "task": "tree",
+      "n": 4,
+      "weights": [
+        -3,
+        -2,
+        -1,
+        -9
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "output": {
+      "weight": 0,
+      "selected": []
+    },
+    "defect": "Empty independent set"
+  },
+  {
+    "name": "tree-tie-zero",
+    "input": {
+      "task": "tree",
+      "n": 3,
+      "weights": [
+        0,
+        0,
+        0
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    "output": {
+      "weight": 0,
+      "selected": []
+    },
+    "defect": "Zero weight and tied choices"
+  },
+  {
+    "name": "tree-middle-vs-ends",
+    "input": {
+      "task": "tree",
+      "n": 3,
+      "weights": [
+        4,
+        9,
+        6
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "output": {
+      "weight": 10,
+      "selected": []
+    },
+    "defect": "Valid optimal witness"
+  },
+  {
+    "name": "naive-empty-pattern",
+    "input": {
+      "task": "naive",
+      "text": "Hi!",
+      "pattern": ""
+    },
+    "output": {
+      "positions": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "defect": "Match every boundary"
+  },
+  {
+    "name": "naive-overlap",
+    "input": {
+      "task": "naive",
+      "text": "aaaaa",
+      "pattern": "aaa"
+    },
+    "output": {
+      "positions": [
+        0,
+        1,
+        2
+      ]
+    },
+    "defect": "Overlap and full-match fallback"
+  },
+  {
+    "name": "naive-punctuation",
+    "input": {
+      "task": "naive",
+      "text": "a a a",
+      "pattern": "a "
+    },
+    "output": {
+      "positions": [
+        0,
+        2
+      ]
+    },
+    "defect": "Spaces are ordinary symbols"
+  },
+  {
+    "name": "kmp-empty-pattern",
+    "input": {
+      "task": "kmp",
+      "text": "Hi!",
+      "pattern": ""
+    },
+    "output": {
+      "positions": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "defect": "Match every boundary"
+  },
+  {
+    "name": "kmp-overlap",
+    "input": {
+      "task": "kmp",
+      "text": "aaaaa",
+      "pattern": "aaa"
+    },
+    "output": {
+      "positions": [
+        0,
+        1,
+        2
+      ]
+    },
+    "defect": "Overlap and full-match fallback"
+  },
+  {
+    "name": "kmp-punctuation",
+    "input": {
+      "task": "kmp",
+      "text": "a a a",
+      "pattern": "a "
+    },
+    "output": {
+      "positions": [
+        0,
+        2
+      ]
+    },
+    "defect": "Spaces are ordinary symbols"
+  },
+  {
+    "name": "rk-empty-pattern",
+    "input": {
+      "task": "rk",
+      "text": "Hi!",
+      "pattern": ""
+    },
+    "output": {
+      "positions": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "defect": "Match every boundary"
+  },
+  {
+    "name": "rk-overlap",
+    "input": {
+      "task": "rk",
+      "text": "aaaaa",
+      "pattern": "aaa"
+    },
+    "output": {
+      "positions": [
+        0,
+        1,
+        2
+      ]
+    },
+    "defect": "Overlap and full-match fallback"
+  },
+  {
+    "name": "rk-punctuation",
+    "input": {
+      "task": "rk",
+      "text": "a a a",
+      "pattern": "a "
+    },
+    "output": {
+      "positions": [
+        0,
+        2
+      ]
+    },
+    "defect": "Spaces are ordinary symbols"
+  },
+  {
+    "name": "rk-known-collision",
+    "input": {
+      "task": "rk",
+      "text": "abdj",
+      "pattern": "ab"
+    },
+    "output": {
+      "positions": [
+        0
+      ]
+    },
+    "defect": "Hash collision must not become false positive"
+  },
+  {
+    "name": "suffix-banana",
+    "input": {
+      "task": "suffix",
+      "text": "banana"
+    },
+    "output": {
+      "sa": [
+        5,
+        3,
+        1,
+        0,
+        4,
+        2
+      ],
+      "lcp": [
+        0,
+        1,
+        3,
+        0,
+        0,
+        2
+      ],
+      "repeated": "ana"
+    },
+    "defect": "Correct order and Kasai LCP"
+  },
+  {
+    "name": "suffix-distinct",
+    "input": {
+      "task": "suffix",
+      "text": "abc"
+    },
+    "output": {
+      "sa": [
+        0,
+        1,
+        2
+      ],
+      "lcp": [
+        0,
+        0,
+        0
+      ],
+      "repeated": ""
+    },
+    "defect": "No spurious repeated substring"
+  },
+  {
+    "name": "suffix-aaaa",
+    "input": {
+      "task": "suffix",
+      "text": "aaaa"
+    },
+    "output": {
+      "sa": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "lcp": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "repeated": "aaa"
+    },
+    "defect": "Overlapping repetition and no sentinel"
+  },
+  {
+    "name": "aho-duplicate-suffix",
+    "input": {
+      "task": "aho",
+      "patterns": [
+        "a",
+        "aa",
+        "a"
+      ],
+      "texts": [
+        "aaa",
+        "",
+        "aaa"
+      ]
+    },
+    "output": {
+      "counts": [
+        [
+          3,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          2,
+          3
+        ]
+      ]
+    },
+    "defect": "Duplicate terminal and repeated text reset"
+  },
+  {
+    "name": "aho-no-dictionary",
+    "input": {
+      "task": "aho",
+      "patterns": [],
+      "texts": [
+        "abc",
+        ""
+      ]
+    },
+    "output": {
+      "counts": [
+        [],
+        []
+      ]
+    },
+    "defect": "Empty dictionary rows per text"
+  },
+  {
+    "name": "aho-failure-suffix",
+    "input": {
+      "task": "aho",
+      "patterns": [
+        "he",
+        "she",
+        "hers"
+      ],
+      "texts": [
+        "ushers"
+      ]
+    },
+    "output": {
+      "counts": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "defect": "Failure suffix matches"
+  }
+]
